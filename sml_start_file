@@ -1,0 +1,44 @@
+/*The standard maths library, sml.h*/
+/*By Fon Emmanuel Noel Nfebe*/
+/*June 2015 */
+#ifndef _INCLUDE_sml
+#define _INCLUDE_sml
+
+/*def of function prototypes */
+int facto(int a);
+int comb(int n, int r);
+int perm(int n, int r);
+int sum(int n);
+int exp(int x, int y);
+//Factorial function.
+int facto(int a){
+    if(a==1)
+    return a;
+    else return a*facto(a-1);
+}
+//Combination
+int comb(int n, int r){
+    return (facto(n)/(facto(n-r)*facto(r)));
+}
+//Permutation
+int perm(int n, int r){
+    
+    return comb(n,r)*facto(r);
+}
+//Sum of fist n numbers.
+int sum(int n){
+/*The upgrade will be done for negative numbers*/
+    if(n==0)
+    return n;
+    else return n+sum(n-1);
+}
+//Exponent.
+int exp(int x, int y){
+    if(y==1)
+    return x;
+    else
+return x*exp(x, y-1);
+}
+
+#endif
+
